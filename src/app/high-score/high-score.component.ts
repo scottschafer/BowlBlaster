@@ -15,7 +15,10 @@ export class HighScoreComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
 
+  ngDoCheck() {
+    // this isn't the right way to do it. the state changing should be an event (or use actual routing)
     this.bragMessage = "I scored " + this.appState.highScore + " on " + window.location.href +
       ", a fun and silly game of plungers and toilets! Can you beat my score?";
   }

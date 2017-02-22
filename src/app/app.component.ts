@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   ngDoCheck() {
+
     if (this.appState.state == undefined) {
       this.appState.state = AppState.GAME_SPLASH_SCREEN;
 

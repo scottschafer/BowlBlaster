@@ -26,13 +26,13 @@
     </div>
   </div>
 
-  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_POOPED_PANTS)"><!-- [appScaleToWidth]="800"> -->
+  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_POOPED_PANTS)" [appScaleToWidth]="800">
     <div>
       <h1> YOU POOPED YOUR PANTS! </h1>
     </div>
   </div>
 
-  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_HIT_MONSTER)"><!-- [appScaleToWidth]="800"> -->
+  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_HIT_MONSTER)" [appScaleToWidth]="800">
     <div>
       <h1> NEXT TIME GRAB A PLUNGER! </h1>
     </div>

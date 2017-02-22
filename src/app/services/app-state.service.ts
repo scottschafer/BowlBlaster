@@ -20,7 +20,7 @@ export enum AppState {
 @Injectable()
 export class AppStateService {
 
-  constructor( /*private cookieService:CookieService */) {
+  constructor(/*private cookieService:CookieService*/ ) {
     //this.state = AppState.GAME_SPLASH_SCREEN;
   }
 
@@ -54,6 +54,7 @@ export class AppStateService {
   get highScore():number {
     if (this._highScore === undefined) {
       //this._highScore = parseInt(this.cookieService.get('highScore'));
+      this._highScore = parseInt(document.cookie);
       this._highScore = isNaN(this._highScore) ? 0 : this._highScore;
     }
     return this._highScore;
@@ -61,6 +62,7 @@ export class AppStateService {
 
   set highScore(val:number) {
     this._highScore = val;
+    document.cookie = val.toString();
     //this.cookieService.put('highScore',val.toString());    
   }
 

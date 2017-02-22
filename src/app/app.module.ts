@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+//import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { ClipboardModule } from 'ngx-clipboard';
 import { MaterialModule } from '@angular/material';
 
@@ -37,8 +37,8 @@ import { ScaleToWidthDirective } from './scale-to-width.directive';
   providers: [
     AppStateService,
     AudioService,
-    EventPublisherService,
-    CookieService
+    EventPublisherService/*,
+    CookieService*/
   ],
   bootstrap: [AppComponent]
 })

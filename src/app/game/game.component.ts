@@ -78,7 +78,7 @@ export class GameComponent implements OnInit, IMazeLevel {
 
   ngOnInit() {
 
-    //this.eventPublisherService.Stream.subscribe(event => this.processEvent(event));
+    this.eventPublisherService.Stream.subscribe(event => this.processEvent(event));
 
     $(window).mouseup(() => {
       this.mousedown = false;
@@ -86,7 +86,7 @@ export class GameComponent implements OnInit, IMazeLevel {
 
     $(window).keydown((e) => {
       if (e.keyCode == 32) {
-        //this.eventPublisherService.emit(EventType.EVENT_PICKUP_DROP);
+        this.eventPublisherService.emit(EventType.EVENT_PICKUP_DROP);
       }
       this.keyDown[e.keyCode] = true;
     })
@@ -322,7 +322,6 @@ export class GameComponent implements OnInit, IMazeLevel {
   }
 
   nextLevel() {
-debugger;
     this.audioService.playMusic(AudioType.MUSIC_LEVEL);
 
     ++this.appState.levelNumber;
