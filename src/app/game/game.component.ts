@@ -1,18 +1,17 @@
 import { Component, OnInit, ElementRef, ComponentRef, Input, Inject } from '@angular/core';
 import { CharacterMap } from "../sprites/character-map";
-import { AppState, AppStateService } from '../services/app-state-service';
-import { AudioService, AudioType } from '../services/audio-service';
-import { SquareMazeGrid, SquareWall } from "../../../maze-generator-ts/src/Objects/SquareMazeGrid";
-import { MazeCell, MazeGrid } from "../../../maze-generator-ts/src/Objects/MazeGrid";
+import { AppState, AppStateService } from '../services/app-state.service';
+import { AudioService, AudioType } from '../services/audio.service';
+import { SquareMazeGrid, SquareWall } from "../../maze-generator-ts/src/Objects/SquareMazeGrid";
+import { MazeCell, MazeGrid } from "../../maze-generator-ts/src/Objects/MazeGrid";
 import { Constants } from '../constants';
 import { Sprite } from "../sprites/sprite";
 import { PlayerSprite } from "../sprites/player-sprite";
 import { OtherSprite } from "../sprites/other-sprite";
 import { CloggedToiletSprite } from "../sprites/clogged-toilet-sprite";
 import { IMazeLevel } from "../IMazeLevel";
-import { PseudoRandom } from "../../../maze-generator-ts/src/Helpers/PseudoRandom";
-import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher-service';
-import { UserInputService } from '../services/user-input.service';
+import { PseudoRandom } from "../../maze-generator-ts/src/Helpers/PseudoRandom";
+import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher.service';
 
 declare var $: any;
 
@@ -60,8 +59,7 @@ export class GameComponent implements OnInit, IMazeLevel {
   constructor(private elementRef: ElementRef,
     public appState: AppStateService,
     public audioService: AudioService,
-    private eventPublisherService:EventPublisherService,
-    private userInputService: UserInputService
+    private eventPublisherService:EventPublisherService
     ) {      
   }
 
@@ -80,7 +78,7 @@ export class GameComponent implements OnInit, IMazeLevel {
 
   ngOnInit() {
 
-    this.eventPublisherService.Stream.subscribe(event => this.processEvent(event));
+    //this.eventPublisherService.Stream.subscribe(event => this.processEvent(event));
 
     $(window).mouseup(() => {
       this.mousedown = false;
@@ -88,7 +86,7 @@ export class GameComponent implements OnInit, IMazeLevel {
 
     $(window).keydown((e) => {
       if (e.keyCode == 32) {
-        this.eventPublisherService.emit(EventType.EVENT_PICKUP_DROP);
+        //this.eventPublisherService.emit(EventType.EVENT_PICKUP_DROP);
       }
       this.keyDown[e.keyCode] = true;
     })
@@ -225,7 +223,7 @@ export class GameComponent implements OnInit, IMazeLevel {
         break;
     }
   }
-
+  
   initGame() {
     this.appState.levelNumber = 0;
     this.appState.numLives = 3;
@@ -324,7 +322,7 @@ export class GameComponent implements OnInit, IMazeLevel {
   }
 
   nextLevel() {
-
+debugger;
     this.audioService.playMusic(AudioType.MUSIC_LEVEL);
 
     ++this.appState.levelNumber;
@@ -769,8 +767,6 @@ export class GameComponent implements OnInit, IMazeLevel {
   useToilet() {
     this.appState.score += 10;
     this.appState.msUntilBathroomBreak = Constants.MS_UNTIL_BATHROOM_BREAK;
-//                                this.appState.lastBathroomBreak = new Date().getTime();
-    
   }
 
 }

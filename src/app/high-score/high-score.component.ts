@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState, AppStateService } from '../services/app-state-service';
+import { AppState, AppStateService } from '../services/app-state.service';
 
 @Component({
   selector: 'high-score',

@@ -7,15 +7,12 @@
     <h1> PRESENTS...</h1>
   </div>
 
-
   <div [hidden]="appState.state != GAME_INTRO" class="fluid-container max-height">
     <start-screen></start-screen>
   </div>
 
-  <div class="fluid-container max-height" [hidden]="(appState.state != GAME_IN_PROGRESS) &&
-(appState.state != GAME_STARTING) &&
-(appState.state != GAME_LOST_LIFE_POOPED_PANTS) &&
-(appState.state != GAME_LOST_LIFE_HIT_MONSTER)">
+  <div class="fluid-container max-height"
+        [hidden]="(appState.state != GAME_IN_PROGRESS) && (appState.state != GAME_STARTING) && (appState.state != GAME_LOST_LIFE_POOPED_PANTS) && (appState.state != GAME_LOST_LIFE_HIT_MONSTER)">
 
     <div class="row max-height">
 
@@ -29,18 +26,21 @@
     </div>
   </div>
 
-  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_POOPED_PANTS)" [appScaleToWidth]="800">
+  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_POOPED_PANTS)"><!-- [appScaleToWidth]="800"> -->
     <div>
       <h1> YOU POOPED YOUR PANTS! </h1>
     </div>
   </div>
 
-  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_HIT_MONSTER)" [appScaleToWidth]="800">
+  <div class="death-screen" [hidden]="(appState.state != GAME_LOST_LIFE_HIT_MONSTER)"><!-- [appScaleToWidth]="800"> -->
     <div>
       <h1> NEXT TIME GRAB A PLUNGER! </h1>
     </div>
   </div>
 
-<div class="death-screen" [hidden]="(appState.state != GAME_NEW_HIGHSCORE)" [appScaleToWidth]="800">
-  <high-score></high-score>
+  <div class="death-screen" [hidden]="(appState.state != GAME_NEW_HIGHSCORE)" [appScaleToWidth]="800">
+
+    <high-score></high-score>
+  </div>
+
 </div>

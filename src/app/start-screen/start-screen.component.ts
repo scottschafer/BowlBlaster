@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { CharacterMap } from '../sprites/character-map';
-import { AppState, AppStateService } from '../services/app-state-service';
-import { AudioService, AudioType } from '../services/audio-service';
+import { AppState, AppStateService } from '../services/app-state.service';
+import { AudioService, AudioType } from '../services/audio.service';
 import { Constants } from '../constants';
 
 declare var $:any;

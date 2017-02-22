@@ -3,9 +3,9 @@ import { SpriteMap } from "./sprite-map";
 import { CharacterMap } from "./character-map";
 import { Sprite } from "./sprite";
 import { OtherSprite } from "./other-sprite";
-import { AppState, AppStateService } from '../services/app-state-service';
-import { AudioType, AudioService } from '../services/audio-service';
-import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher-service';
+import { AppState, AppStateService } from '../services/app-state.service';
+import { AudioType, AudioService } from '../services/audio.service';
+import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher.service';
 import { Constants } from '../constants';
 import { IMazeLevel } from "../IMazeLevel";
 

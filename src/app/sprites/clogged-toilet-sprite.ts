@@ -2,9 +2,9 @@ import { SpriteMap } from "./sprite-map";
 import { CharacterMap } from "./character-map";
 import { Sprite } from "./sprite";
 import { OtherSprite } from "./other-sprite";
-import { AppState, AppStateService } from '../services/app-state-service';
+import { AppState, AppStateService } from '../services/app-state.service';
 
-import { Constants } from '../constants';
+import { Constants } from "../constants";
 import { IMazeLevel } from "../IMazeLevel";
 
 export class CloggedToiletSprite extends OtherSprite {

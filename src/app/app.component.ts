@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState, AppStateService } from './services/app-state-service';
+import { AppState, AppStateService } from './services/app-state.service';
+
+/*
 import { AudioService } from './services/audio-service';
 import { UserInputService } from './services/user-input.service';
 import { EventPublisherService } from './services/event-publisher-service';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+*/
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [ AppStateService, AudioService, UserInputService, EventPublisherService, CookieService ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 

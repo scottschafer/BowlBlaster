@@ -1,5 +1,4 @@
 import { SpriteMap } from "./sprite-map";
-import { GameComponent } from "../game/game.component";
 import { IMazeLevel } from "../IMazeLevel";
 
 export class Sprite {

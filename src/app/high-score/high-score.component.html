@@ -10,7 +10,7 @@
     {{bragMessage}}<br>
 
     <button class="btn btn-default" [class.btn-success]= "isCopied" type="button"
-      ngxClipboard [cbContent]="bragMessage" (cbOnSuccess)="isCopied = true">copy</button>
+      ngxClipboard [cbContent]="bragMessage" (click)="isCopied = true">copy</button>
   </h2>
 
   <h2 [hidden]="!isCopied">Copied! To post to Facebook, click the icon and paste into your status. Thanks for playing!<br>
@@ -18,16 +18,3 @@
       <img style="height:50px" src="assets/FB-fLogo-Blue-broadcast.png">
     </a>
   </h2>
-  <!-- 
-
-
-    <div class="input-group">
-      <input type="text" class="form-control" [(ngModel)]="text" placeholder="content will be copy after click the copy button">
-      <span class="input-group-btn">
-        <button class="btn btn-default" [class.btn-success]= "isCopied1" type="button"
-          ngxClipboard [cbContent]="text" (cbOnSuccess)="isCopied1 = true">copy</button>
-      </span>
-    </div>
-
--->
-

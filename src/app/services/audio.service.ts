@@ -1,7 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs/Observable";
-import { CharacterMap } from '../sprites/character-map';
+//import { Observable } from "rxjs/Observable";
 
 export enum AudioType {
   MUSIC_STARTSCREEN,
@@ -20,7 +19,7 @@ export class AudioService {
   private lastType: AudioType;
   private music: HTMLAudioElement;
 
-  private fxFart: HTMLAudioElement = new Audio("assets/sounds/Girl Fart-SoundBible.com-669012925.mp3");
+  private fxFart: HTMLAudioElement = new Audio("assets/sounds/girl_fart_soundbible.com-669012925.mp3");
   private fxFlush: HTMLAudioElement = new Audio("assets/sounds/Toilet_Flushing-KevanGC-917782919.mp3");
   private fxExtraLife: HTMLAudioElement = new Audio("assets/sounds/274183__littlerobotsoundfactory__jingle-win-synth-04.mp3");
   private fxDrop: HTMLAudioElement = new Audio("assets/sounds/352110__inspectorj__dropping-wood-d.mp3");

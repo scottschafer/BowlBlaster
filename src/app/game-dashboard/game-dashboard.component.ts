@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { AppState, AppStateService } from '../services/app-state-service';
-import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher-service';
+import { AppState, AppStateService } from '../services/app-state.service';
+import { EventType, GameEvent, EventPublisherService } from '../services/event-publisher.service';
 import { Constants } from '../constants';
 declare var $: any;
 
@@ -23,7 +23,7 @@ export class GameDashboardComponent implements OnInit {
 
   constructor(private elementRef: ElementRef,
     public appState:AppStateService,
-    private eventPublisherService: EventPublisherService ) { 
+    private eventPublisherService: EventPublisherService) { 
   }
 
   ngOnInit() {
